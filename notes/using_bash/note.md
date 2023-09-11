@@ -5,7 +5,7 @@
 ### Pipes and Redirection
 
 * Pipes send the ouput of one process to another
-    * ls | wc -l
+  * ls | wc -l
 
 ```bash
     cat lorem.txt 
@@ -18,7 +18,7 @@
 
 * Redirection send streams (standard input, output, and error)
     to or from files
-    * ls > list.txt
+  * ls > list.txt
 
 | Stream | Name     |Content      |
 |--------|----------|-------------|

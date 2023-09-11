@@ -42,3 +42,14 @@ echo "there"
 * You can change options for the subshell with set
     or shopt in the script
 * Scripts help avoid typos and easier sharing of Bash code
+
+## echo
+
+Prints text to the standard output
+
+* \ escapes a character
+* '   '  *single quotes or strong quotes*
+
+  * everything in the string is treated
+    as literal text
+* "   "
