@@ -73,3 +73,27 @@ help # for builtins
 ```
 
 ## Parentheses, Braces, and Bracket
+
+Bash uses these characters differently than other languages.
+
+## Expansion and subtitutions
+
+Used to specify values that are unknown until a script runs.
+Both are interpreted when the run and replace themselves
+    with a value or set of values.
+
+| Representation | Name      |
+|----------------|-----------|
+| ~ | Tidle expansion |
+| {...} | Brace expansion |
+| ${...} | Parameter expansion |
+| $(...) | Command substitution |
+| $((...)) | Arithmetic expansion |
+
+### Brace expansion
+
+### Parameter expansion
+
+### Command substitution
+
+### Arithmetic expansion
