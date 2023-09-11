@@ -24,7 +24,7 @@
 |--------|----------|-------------|
 |0|Standard input (stdin) | Keyboard or other input |
 |1|Standard output (stdout) | Regular output |
-|3| Standard error (stderr) | Output marked as 'error' |
+|2| Standard error (stderr) | Output marked as 'error' |
 
 |Symbol | Function |
 |-------|---------------|
@@ -193,7 +193,7 @@ echo ${greeting//e/_}
 # h_llo th_r_!
 ```
 
-### Command substitution
+### Command substitution | $(...)
 
 Puts the output of one command inside another.
 
@@ -212,4 +212,12 @@ echo "Result: $(python3 -c 'print("Hello from Python!")' | tr [a-z] [A-Z])"
 # Result: HELLO FROM PYTHON!
 ```
 
-### Arithmetic expansion
+### Arithmetic expansion | $((...))
+
+Does calculations
+Bash can on do calculation with integers
+
+```bash
+echo $(( 2 + 2)) # 4
+echo $((4 / 5 )) # 0
+```
