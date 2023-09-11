@@ -48,8 +48,98 @@ echo "there"
 Prints text to the standard output
 
 * \ escapes a character
-* '   '  *single quotes or strong quotes*
 
-  * everything in the string is treated
-    as literal text
-* "   "
+* ' '  *single quotes or strong quotes*
+  * treats everything in the string as literal text
+
+* " " *double quotes*
+  * Interprets substitutions, expansion evaluation, variables, and so on
+
+* End with a newline by defalut
+
+```bash
+echo
+
+echo;echo "More space!"; echo
+
+# More Space
+
+echo -n "No newline"
+echo -n "Part of"; echo -n " a statement"
+# Part of a statement
+```
+
+## Variable
+
+Allow us to store and retrieve values by name
+
+Variables are a special case of parameter substitution
+
+Variable are named with alphanumeric character
+
+Variables are assigned with an = sign with no space on either end
+
+Variable name are case-sensitive
+
+```bash
+mygreeting=Hello
+```
+
+Variables are available until the shell session closes
+
+**declare -r** creates a read only variable
+
+### Text transformations
+
+**declare -l** changes the string to lowercase
+
+**declare -u** changes the string to uppercase
+
+**declare -p** show all session variables
+
+**declare -i** for integers
+
+```bash
+echo $USER # returns username
+```
+
+## Working with Numbers
+
+### $((...))
+
+Arithmetic expansion returns the result of mathematical operations.
+
+### ((...))
+
+Arithmetic evaluation performs calculations and changes the value of variables.
+
+| Operation | Operator |
+|-----------|----------|
+|Addition|+|
+|Subtraction|-|
+|Multiplication|*|
+|Division|/|
+|Modulo|%|
+|Exponentiation|**|
+
+Bash only supports integer calculations.
+
+To do more precise calculations, consider using bc or awk
+
+### Bc with Bash
+
+```bash
+declare -i c=1
+declare -i d=3
+e=$(echo "scale=3; $c/$d" | bc)
+echo e #.333 treated as text
+```
+
+### Random
+
+```bash
+echo $RANDOM
+# return number between 0 and 32,767
+echo $(( 1 + RANDOM % 100 )) 
+# random number between 1 and 10
+```
