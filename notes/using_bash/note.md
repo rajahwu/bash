@@ -154,8 +154,62 @@ echo {cat,dog,fox}_{1..5}
 # cat_1 cat_2 cat_3 cat_4 cat_5 dog_1 dog_2 dog_3 dog_4 dog_5 fox_1 fox_2 fox_3 fox_4 fox_5
 ```
 
-### Parameter expansion
+### Parameter expansion | ${...}
+
+Retrieves and transforms stored values.
+Can be used without braces.
+
+```bash
+a="Hello World"
+echo $a # Hello World
+echo ${a} # Hello World
+echo ${a:1:9} # ello Worl
+echo ${a/World/Everybody} 
+# Hello Everybody
+```
+
+**Uses:**
+
+```bash
+greeting="hello there!"
+echo $greeting # hello there!
+
+echo ${greeting:6} # there!
+# value starting from position 6
+
+echo ${greeting:6:3} # the
+# start 6 run three
+```
+
+Pattern substitution
+
+```bash
+# replace first match
+echo ${greeting/there/everybody} 
+# hello everybody!
+
+#replace all
+echo ${greeting//e/_} 
+# h_llo th_r_!
+```
 
 ### Command substitution
+
+Puts the output of one command inside another.
+
+Often used with tools such as GREP, AWK, and CUT,
+
+and is widely used to determine whether a script has what it needs on the target system.
+
+```bash
+uname -r # release version of the kernel
+# 5.15.90.1-microsoft-standard-WSL2
+echo "The kernel is $(uname -r)."
+# The kernel is 5.15.90.1-microsoft-standard-WSL2.
+echo "The Python version is $(python -V)."
+# The Python version is Python 3.9.4.
+echo "Result: $(python3 -c 'print("Hello from Python!")' | tr [a-z] [A-Z])"
+# Result: HELLO FROM PYTHON!
+```
 
 ### Arithmetic expansion
