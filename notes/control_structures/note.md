@@ -65,17 +65,23 @@ for i in 1 2 3; do echo $i; done
 # 1
 # 2
 # 3
+```
 
+```bash
 for i in {1..100}
 do  
     echo $i
 done
+```
 
+```bash
 for (( i=1; i<=10; i++))
 do  
     echo $i
 done
+```
 
+```bash
 declare -a fruits=("apple" "banana" "cherry")
 for i in ${fruits[@]}
 do  
@@ -84,7 +90,9 @@ done
 # apple
 # banana
 # cherry
+```
 
+```bash
 declare -A arr
 arr["name"]="scott"
 arr["id"]="1234"
@@ -92,7 +100,9 @@ for i in "${!arr[@]}"
 do
     echo $i: "${arr[$i]}"
 done
+```
 
+```bash
 for i in $(ls)
 do 
     echo "Found a file: $i"
