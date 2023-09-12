@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
-for i in *
-do 
-    echo "Found a file: $i"
-done
+animal="cat"
+case $animal in
+    bird) echo "Avian";;
+    dog|puppy) echo "Canine";;
+    *) echo "No match";;
+esac

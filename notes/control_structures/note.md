@@ -113,3 +113,17 @@ do
     echo "Found a file: $i"
 done 
 ```
+
+## Case Statement
+
+* Checks an input against a set of predefined values
+
+```bash
+animal="dog"
+case $animal in
+    bird) echo "Avian";;
+    dog|puppy) echo "Canine";;
+    *) echo "No match";;
+esac
+# Canine
+```
