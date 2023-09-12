@@ -11,8 +11,8 @@
 
 ## [bash_programming](./notes/programming/note.md)
 
-## [control_structures](./notes/control_structures/)
+## [control_structures](./notes/control_structures/note.md)
 
-## [bash_functions](./notes/functions/)
+## [bash_functions](./notes/functions/note.md)
 
-## [read_write_textfiles](./notes/read_write_text/)
+## [read_write_textfiles](./notes/read_write_text/note.md)
