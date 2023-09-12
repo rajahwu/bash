@@ -10,3 +10,9 @@
 ## [formatting](./notes/formatting/)
 
 ## [bash_programming](./notes/programming/note.md)
+
+## [control_structures](./notes/control_structures/)
+
+## [bash_functions](./notes/functions/)
+
+## [read_write_textfiles](./notes/read_write_text/)
