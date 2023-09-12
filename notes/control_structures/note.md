@@ -54,3 +54,52 @@ until ((m==10)); do
     ((m++))
 done
 ```
+
+## for i in ... do ... done
+
+For loops, iterate through a list of items,
+    running once for each item
+
+```bash
+for i in 1 2 3; do echo $i; done
+# 1
+# 2
+# 3
+
+for i in {1..100}
+do  
+    echo $i
+done
+
+for (( i=1; i<=10; i++))
+do  
+    echo $i
+done
+
+declare -a fruits=("apple" "banana" "cherry")
+for i in ${fruits[@]}
+do  
+    echo $i
+done
+# apple
+# banana
+# cherry
+
+declare -A arr
+arr["name"]="scott"
+arr["id"]="1234"
+for i in "${!arr[@]}"
+do
+    echo $i: "${arr[$i]}"
+done
+
+for i in $(ls)
+do 
+    echo "Found a file: $i"
+done
+
+for i in *
+do 
+    echo "Found a file: $i"
+done
+```
