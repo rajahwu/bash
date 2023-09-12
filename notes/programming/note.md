@@ -21,6 +21,7 @@
 ### Bash script
 
 * Text file that contains a series of commands
+* chmod +x myscript.sh
 * bash myscript.sh
 
 ### Executable bash script
@@ -213,3 +214,39 @@ false && echo "success!" #
 Extended test offers more features best to use them over switching between the two
 
 Test is more widely compatible with other shells
+
+## Arrays
+
+Bash supports indexed and associative arrays
+
+### Indexed Arrays
+
+```bash
+snacks=("apple" "banana" "orange")
+declare -a snacks=("apple" "banana" "orange")
+
+echo ${snacks[2]}
+
+snacks[5]="grapes"
+snacks+=("mango")
+echo ${snacks[@]} # prints all array elements
+
+for i in {0..6}; do echo "$i: ${snacks[i]}"; done
+# 0: apple
+# 1: banana
+# 2: orange
+# 3: 
+# 4: 
+# 5: grapes
+# 6: mango
+```
+
+### Associative Arrays
+
+```bash
+declare -A office
+office[city]="Philadelphia"
+office["building name"]="HQ West"
+echo ${office["building name"]} is in ${office[city]}
+# HQ West is in Philadelphia
+```
