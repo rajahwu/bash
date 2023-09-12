@@ -140,6 +140,12 @@ echo e #.333 treated as text
 ```bash
 echo $RANDOM
 # return number between 0 and 32,767
-echo $(( 1 + RANDOM % 100 )) 
+echo $(( 1 + RANDOM % 10 )) 
 # random number between 1 and 10
 ```
+
+## Testing Expression
+
+### [ ... ]
+
+[ is an aliasfor the test built-in and is isused thetes or evaluate expressions ]
