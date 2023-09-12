@@ -146,6 +146,70 @@ echo $(( 1 + RANDOM % 10 ))
 
 ## Testing Expression
 
-### [ ... ]
+### [ ... ] | test
 
-[ is an aliasfor the test built-in and is isused thetes or evaluate expressions ]
+[ is an alias for the test built-in and is isused thetes or evaluate expressions ]
+
+```bash
+help test
+
+[ 4 -lt 3]; echo $? # 1 
+```
+
+* When a test is run an exit or return status of zero or one is reutrned
+
+* 0 means success, and 1 means failure
+
+* 0 and 1 can be treated as truth values (0=true, 1=false)
+
+* The return status is treated as the value of the command
+
+* The variable $? stores the return status of the last-run command
+
+* ! to negate test results
+
+```bash
+String operators:
+    
+      -z STRING      True if string is empty.
+    
+      -n STRING
+         STRING      True if string is not empty.
+    
+      STRING1 = STRING2
+                     True if the strings are equal.
+      STRING1 != STRING2
+                     True if the strings are not equal.
+      STRING1 < STRING2
+                     True if STRING1 sorts before STRING2 lexicographically.
+      STRING1 > STRING2
+                     True if STRING1 sorts after STRING2 lexicographically.
+
+arg1 OP arg2   Arithmetic tests.  OP is one of -eq, -ne, -lt, -le, -gt, or -ge.
+```
+
+### [[ ... ]] extend test
+
+Extended test supports comparison that test runs and adds other features
+
+```bash
+[[ -d ~ && "cat" = "cat" ]]; echo $? # 0
+[[ -d ~ && "cat" = "dog" ]]; echo $? # 1
+[[ -d ~ || "cat" = "dog" ]]; echo $? # 0
+[[ -d ~ ]] && echo ~ is a directory
+# /home/username is a directory
+ls && echo "listed the directory"
+
+true && echo "success!" # success!
+false && echo "success!" # 
+```
+
+### Regex matching | =~
+
+```bash
+[[ "cat" =~ c.* ]]; echo $? %
+```
+
+Extended test offers more features best to use them over switching between the two
+
+Test is more widely compatible with other shells
