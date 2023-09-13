@@ -3,6 +3,7 @@
 * Write to  files with output redirection operators (> and >>)
   * echo "abc" > out.txt overwrites the contents of out.txt
   * echo "abc" >> out.txt appends to the end of out.txt
+
 * Read from files with input redirecton (<) and read command
   * while read line; do echo $line; done < in.txt
 

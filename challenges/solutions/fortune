@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+echo -e "\t\t Welcome to the "
+echo -e "\t\t 🧙 \033[5mMYSTICAL  SLPHERE\033[0m 🧙"
+
+waitingnumber=$(( 0 + RANDOM % 3))
+mysterynumber=$(( 0 + RANDOM % 10))
+
+declare -a fortunes=(
+    "Today is your lucky day."
+    "A smile is your passport into the hearts of others."
+    "Your hard work will pay off soon."
+    "Good things come to those who wait."
+    "You are a person of great importance."
+    "Happiness is a journey, not a destination."
+    "Your future looks bright."
+    "You will find a solution to a long-standing problem."
+    "Don't be afraid to take risks."
+    "You are awesome"
+)
+
+case $waitingnumber in 
+    0) sleep 1; echo "One moment please..."; sleep 1;;
+    1) sleep 1; echo "One moment please..."; sleep 2;;
+    2) sleep 1; echo "One moment please..."; sleep 1;;
+    3) sleep 1; echo "One moment please..."; sleep 3;;
+esac
+
+echo
+echo "${fortunes[mysterynumber]}"
+echo
