@@ -23,6 +23,7 @@ text_styles[inverted]='\e[7m'          # Inverted colors
 text_styles[hidden]='\e[8m'
 
 print_title_screen() {
+    clear
     echo -e "${text_styles[red]}"
     echo "  ____                   _     _      _"
     echo " | __ )  __ _ _ __   __ _| |__ (_)_  _| |_ ___  _ __"
@@ -37,10 +38,15 @@ print_title_screen() {
     echo "     | |_) | | (_| | (__| |_| | (_) | |    | | | |"
     echo "     |____/|_|\__,_|\___|\__|_|\___/|_|    |_| |_|"
     echo -e "${text_styles[default]}"
+    echo
+    echo -e "Press ${text_styles[green]}B${text_styles[default]} to begin or ${text_styles[red]}Q${text_styles[default]} to quit ${text_styles[blink]} ${text_styles[default]}"
+    echo
+    sleep 1;
+    sleep 1;
+    sleep 1;
 }
 
 # Print Title
 print_title_screen
 
-echo -e "Press ${text_styles[green]}B${text_styles[default]} to begin or ${text_styles[red]}Q${text_styles[default]} to quit ${text_styles[blink]} ${text_styles[default]}"
 

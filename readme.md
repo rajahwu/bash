@@ -1,4 +1,4 @@
-# Learing Bash scripting
+# [Learing Bash scripting](https://www.linkedin.com/learning/learning-bash-scripting-17063287/learning-bash-scripting?resume=false)
 
 [code space](https://sturdy-pancake-gw7wq4vpw6v39j94.github.dev/) |
 [man pages](https://www.man7.org/linux/man-pages/man1/bash.1.html)
@@ -16,3 +16,5 @@
 ## [bash_functions](./notes/functions/note.md)
 
 ## [read_write_textfiles](./notes/read_write_text/note.md)
+
+## [user_interaction](./notes/user_interaction/)
