@@ -20,39 +20,27 @@ text_styles[italic]='\e[3m'             # Italic
 text_styles[underline]='\e[4m'       # Underline
 text_styles[blink]='\e[5m'               # Blinking
 text_styles[inverted]='\e[7m'          # Inverted colors
-text_styles[hidden]='\e[8m'           # Hidden text
+text_styles[hidden]='\e[8m'
 
-print_program_title() {
-  echo
-  echo -e "\\______   \\_____    _____|  |__   \\_   ___ \\|  |__ _____  |  | |  |   ____   ____    ____   ____   \\_____  \\"
-  echo -e " |    |  _/\\__  \\  /  ___/  |  \\  /    \\  \\/|  |  \\\\__  \\ |  | |  | _/ __ \\ /    \\  / ___\\_/ __ \\    _(__  <"
-  echo -e " |    |   \\ / __ \\_\\___ \\|   Y  \\ \\     \\___|   Y  \\/ __ \\|  |_|  |_\\  ___/|   |  \\/ /_/  >  ___/   /       \\"
-  echo -e " |______  /(____  /____  >___|  /  \\______  /___|  (____  /____/____/\\___  >___|  /\\___  / \\___  > /______  /"
-  echo -e "        \\/      \\/     \\/     \\/          \\/     \\/     \\/               \\/     \\/\\/_____/      \\/         \\/"
-  echo
+print_title_screen() {
+    echo -e "${text_styles[red]}"
+    echo "  ____                   _     _      _"
+    echo " | __ )  __ _ _ __   __ _| |__ (_)_  _| |_ ___  _ __"
+    echo " |  _ \ / _\` | '_ \ / _\` | '_ \| \ \/ / __/ _ \| '_ \\"
+    echo " | |_) | (_| | | | | (_| | | | | |>  <| || (_) | | | |"
+    echo " |____/ \__,_|_| |_|\__, |_| |_|_/_/\_\\\__\___/|_| |_|"
+    echo "                    |___/"
+    echo -e "${text_styles[cyan]}"
+    echo "      ____  _            _   _              _"
+    echo "     | __ )| | __ _  ___| |_(_) ___  _ __  | |__"
+    echo "     |  _ \| |/ _\` |/ __| __| |/ _ \| '__| | '_ \\"
+    echo "     | |_) | | (_| | (__| |_| | (_) | |    | | | |"
+    echo "     |____/|_|\__,_|\___|\__|_|\___/|_|    |_| |_|"
+    echo -e "${text_styles[default]}"
 }
 
-print_program_title
+# Print Title
+print_title_screen
 
-sleep 3
+echo -e "Press ${text_styles[green]}B${text_styles[default]} to begin or ${text_styles[red]}Q${text_styles[default]} to quit ${text_styles[blink]} ${text_styles[default]}"
 
-clear
-
-print_ascii_art() {
-  echo "  ____                   _     _      _"
-  echo " | __ )  __ _ _ __   __ _| |__ (_)_  _| |_ ___  _ __"
-  echo " |  _ \ / _\` | '_ \ / _\` | '_ \| \ \/ / __/ _ \| '_ \\"
-  echo " | |_) | (_| | | | | (_| | | | | |>  <| || (_) | | | |"
-  echo " |____/ \__,_|_| |_|\__, |_| |_|_/_/\_\\\__\___/|_| |_|"
-  echo "                    |___/"
-  echo ""
-  echo "      ____  _            _   _              _"
-  echo "     | __ )| | __ _  ___| |_(_) ___  _ __  | |__"
-  echo "     |  _ \| |/ _\` |/ __| __| |/ _ \| '__| | '_ \\"
-  echo "     | |_) | | (_| | (__| |_| | (_) | |    | | | |"
-  echo "     |____/|_|\__,_|\___|\__|_|\___/|_|    |_| |_|"
-  echo ""
-}
-
-# Call the function to print the ASCII art
-print_ascii_art
