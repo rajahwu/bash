@@ -1,13 +1,6 @@
 #!/usr/bin/env bash
-while getopts :u:p:ab option; do
-    case $option in
-        u) user=$OPTARG;;
-        p) pass=$OPTARG;;
-        a) echo "got the 'a' flag";;
-        b) echo "got the 'b' flag";;
-        ?) echo "I dont know what $OPTARG is!"
-    esac
+read -p "What year? [nnn] " year
+until [[ $year =~ [0-9]{4} ]]; do
+    read -p "A four-digit year, please! [nnnn] " year
 done
-
-echo "user $user / pass: $pass"
-
+echo "Selected year: $year"
