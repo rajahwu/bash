@@ -2,6 +2,10 @@
 
 ## Commands
 
+```bash
+set -x # display commands as they run
+```
+
 ### Pipes and Redirection
 
 * Pipes send the ouput of one process to another
