@@ -35,6 +35,11 @@ text_styles[blink]='\e[5m'               # Blinking
 text_styles[inverted]='\e[7m'          # Inverted colors
 text_styles[hidden]='\e[8m'
 
+echo "Login To Play"
+read -p "username " username
+
+read password
+
 print_title_screen() {
     clear
     echo -e "${text_styles[red]}"
@@ -56,7 +61,25 @@ print_title_screen() {
     read startgame
     case $startgame in
     B) echo "Starting the game....";;
-    Q) echo "Quitting...";;
+    Q) echo "Quitting..."
+        clear
+        echo "Quitting.."
+        sleep 1
+        clear
+        echo "Quitting."
+        sleep 1
+        clear
+        echo "Quitting"
+        sleep 1
+        clear
+        echo "Quitting ."
+        sleep 1
+        clear
+        echo "Quitting .."
+        sleep 1
+        clear
+        sleep 3
+        exit;;
     *) echo -e "${text_styles[red]}You were destoryed${text_styles[default]}\n"
        echo -e  "\t💀💀💀💀💀💀💀💀💀💀\n"
        sleep 3;
@@ -95,14 +118,18 @@ while [[ -z $selected_token ]]; do
     fi
 done
 
-selected_token="$selected_token"
-space_left="\t"
-ground=$level[ground]
+selected_token="${text_styles[bg_black]}$selected_token"
+space_left="${text_styles[bg_black]}    ${text_styles[bg_black]}"
+ground="${text_styles[bg_black]}$level[ground]"
 
 for i in {0..6} 
 do
     clear
-    echo -e "\n\n\n"
+    echo -e "${text_styles[bg_black]}${text_styles[yellow]} \t $username                                                     "
+    echo -e "${text_styles[bg_black]}                                                     "
+    echo -e "${text_styles[bg_black]}                                                     "
+    echo -e "${text_styles[bg_black]}                                                     "
+    # echo -e "\n\n\n"
     selected_token="$space_left$selected_token"
     echo -e "$selected_token"
     echo -e "${text_styles[magenta]}${level[ground]}${text_styles[default]}"
